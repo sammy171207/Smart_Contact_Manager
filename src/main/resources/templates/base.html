@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/output.css">
+<link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+
     <title th:text="${title}">SCM</title>
 </head>
 <body>
-<ul class="p-4">
-    <li><a th:href="@{/home}">Home</a></li>
-    <li><a th:href="@{/about}">About</a></li>
-    <li><a th:href="@{/services}">Service</a></li>
-</ul>
+
+<div data-th-replace="navbar :: navbar"></div>
 <div class="p-4">
     <section th:replace="${content}"></section>
 </div>
+
+<footer class="p-4">Copyright 2023</footer>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+
 </body>
 </html>
