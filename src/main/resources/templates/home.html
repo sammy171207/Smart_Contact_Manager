@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body>
+<div class="container mx-auto text-2xl bg-gray-100 p-4">
+    <h2>Home</h2>
+    <h2 class="" th:text="${name}"></h2>
+    <h3>About</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula ex at odio malesuada, eget dapibus urna tincidunt. Curabitur id sapien ut justo viverra sagittis. Sed id ligula in est posuere posuere. Aenean vel sem vel nunc facilisis consequat. Integer sit amet dui nec leo tempus volutpat.</p>
+
+    <h3>My Journey</h3>
+    <p>Proin lacinia nisi id turpis varius, non ultricies dolor lacinia. Ut ut mauris ut erat interdum varius ac a risus. Maecenas tincidunt, sapien ut eleifend consectetur, libero dui sollicitudin urna, ut feugiat leo purus ut turpis. Phasellus ut velit sit amet elit sollicitudin convallis non eget sapien.</p>
+
+    <p th:href="${github}">GitHub Profile</p>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+</html>

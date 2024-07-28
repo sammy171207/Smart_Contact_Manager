@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" th:fragment="parent(content,title)" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/output.css">
+    <title th:text="${title}">SCM</title>
+</head>
+<body>
+<ul class="p-4">
+    <li><a th:href="@{/home}">Home</a></li>
+    <li><a th:href="@{/about}">About</a></li>
+    <li><a th:href="@{/services}">Service</a></li>
+</ul>
+<div class="p-4">
+    <section th:replace="${content}"></section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+</body>
+</html>
