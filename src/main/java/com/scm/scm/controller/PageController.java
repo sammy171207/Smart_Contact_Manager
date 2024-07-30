@@ -1,8 +1,11 @@
 package com.scm.scm.controller;
 
+import com.scm.scm.forms.UserForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class PageController {
@@ -14,14 +17,12 @@ public class PageController {
         return "home";
     }
 
-  ////about
+    ////about
     @RequestMapping("/about")
     public String aboutPage(){
         System.out.println("About page loading");
         return "about";
     }
-
-
 
     ///service
     @RequestMapping("/services")
@@ -29,5 +30,32 @@ public class PageController {
         System.out.println("service page loading");
         return "service";
     }
+
+    @GetMapping("/register")
+    public String register(Model model){
+
+        UserForm userForm =new UserForm();
+        
+        model.addAttribute("userForm",userForm);
+        return "register";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    @GetMapping("/contact")
+    public String contact(){
+        return "contact";
+    }
+
+    @RequestMapping(value = "/do-register",method = RequestMethod.POST)
+    public String processRegister(){
+        System.out.println("processing Registraction");
+
+        return "redirect:/register";
+    }
+
 
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},'Register Page')}" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section id="content">
+    <form  data-th-action="@{'/do-register'}" 
+    method="post"
+    data-th-object="$(userForm)"
+    method="post"
+    class="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
+        <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Sign Up</h2>
+
+        <!-- User Information -->
+        <div class="mb-4">
+            <label for="username" 
+            id="username"
+            
+       
+
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+            <input type="text"
+             id="username" 
+             th:field="*{username}"
+            name="username"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-
+            blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:value-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="JohnDoe" required />
+        </div>
+
+        
+
+        <div class="mb-4">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+            <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:value-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="name@example.com" required />
+        </div>
+
+        <div class="mb-4">
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+            <input type="password" id="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:value-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="********" required />
+        </div>
+
+        <div class="mb-4">
+            <label for="confirmPassword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:value-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="********" required />
+        </div>
+
+        <div class="mb-4">
+            <label for="contactNumber" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact Number</label>
+            <input type="text" id="contactNumber" name="contactNumber" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:value-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="+1234567890" required />
+        </div>
+
+        <div class="mb-4">
+            <label for="about" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Write Something About Yourself</label>
+            <textarea id="about" name="about" rows="3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:value-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="Tell us about yourself" required></textarea>
+        </div>
+
+        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign Up</button>
+    </form>
+
+</section>
+</body>
+</html>
