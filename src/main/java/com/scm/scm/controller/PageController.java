@@ -1,14 +1,23 @@
 package com.scm.scm.controller;
 
 import com.scm.scm.forms.UserForm;
+import com.scm.scm.model.User;
+import com.scm.scm.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class PageController {
+
+
+    @Autowired
+    private UserService userService;
+
     @RequestMapping("/home")
     public String home(Model model){
         System.out.println("Home Page handler");
@@ -17,27 +26,43 @@ public class PageController {
         return "home";
     }
 
-    ////about
     @RequestMapping("/about")
     public String aboutPage(){
         System.out.println("About page loading");
         return "about";
     }
 
-    ///service
     @RequestMapping("/services")
     public String servicesPage(){
-        System.out.println("service page loading");
+        System.out.println("Service page loading");
         return "service";
     }
 
     @GetMapping("/register")
     public String register(Model model){
-
-        UserForm userForm =new UserForm();
-        
-        model.addAttribute("userForm",userForm);
+        UserForm userForm = new UserForm();
+        userForm.setUsername("sameer");
+        model.addAttribute("userForm", userForm);
         return "register";
+    }
+
+    @RequestMapping(value = "/do-register", method = RequestMethod.POST)
+    public String processRegister(@ModelAttribute UserForm userForm) throws Exception {
+        System.out.println("Processing registration for user: " + userForm);
+        // Additional logic for registration can be added here
+        User user=User.builder()
+                .name(userForm.getUsername())
+                .email(userForm.getEmail())
+                .password(userForm.getPassword())
+                .phoneNumber(userForm.getContactNumber())
+                .about(userForm.getAbout())
+                .profilePic("https://images.pexels.com/photos/27355293/pexels-photo-27355293/free-photo-of-portrait-of-an-african-man-wearing-cap.jpeg?auto=compress&cs=tinysrgb&w=600")
+                .build();
+      User saved=  userService.saveUser(user);
+        System.out.println(saved);
+
+        // Redirect to a success page or back to the registration form if needed
+        return "redirect:/register";
     }
 
     @GetMapping("/login")
@@ -49,13 +74,4 @@ public class PageController {
     public String contact(){
         return "contact";
     }
-
-    @RequestMapping(value = "/do-register",method = RequestMethod.POST)
-    public String processRegister(){
-        System.out.println("processing Registraction");
-
-        return "redirect:/register";
-    }
-
-
 }

@@ -2,6 +2,7 @@ package com.scm.scm.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Entity(name = "user")
 @Data
+@Builder
 public class User {
 
     @Id
@@ -30,6 +32,7 @@ public class User {
 
     @Column(length = 1000)
     private String profilePic;
+    private  String phoneNumber;
 
     private boolean enabled = false;
     private boolean emailVerified = false;
