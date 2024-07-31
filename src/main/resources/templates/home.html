@@ -7,27 +7,27 @@
     <link rel="stylesheet" href="/css/output.css">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800">
 
 <!-- Navigation Bar -->
 <div th:insert="~{navbar :: navbar}"></div>
 
 <!-- Main Content -->
-<main class="container mx-auto p-6 mt-16">
+<main class="container mx-auto p-6 pt-20 mt-20">
     <div class="text-center my-10">
-        <h1 class="text-4xl font-semibold mb-4">Welcome to SCM</h1>
-        <p class="text-lg text-gray-700">Discover the range of services we offer to help you manage and streamline your operations efficiently.</p>
+        <h1 class="text-4xl font-bold mb-4">Welcome to SCM</h1>
+        <p class="text-lg text-gray-600">Discover the range of services we offer to help you manage and streamline your operations efficiently.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        <div class="bg-white p-4 rounded-lg shadow-lg">
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
             <h2 class="text-2xl font-semibold mb-2">Our Mission</h2>
             <p class="text-gray-700">We aim to provide the best solutions to streamline your business processes and enhance productivity.</p>
         </div>
-        <div class="bg-white p-4 rounded-lg shadow-lg">
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
             <h2 class="text-2xl font-semibold mb-2">Our Vision</h2>
             <p class="text-gray-700">To be a leading provider of innovative and effective business management solutions.</p>
         </div>
-        <div class="bg-white p-4 rounded-lg shadow-lg">
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
             <h2 class="text-2xl font-semibold mb-2">Our Values</h2>
             <p class="text-gray-700">Integrity, innovation, and customer satisfaction are at the heart of everything we do.</p>
         </div>
@@ -35,11 +35,9 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-white-200 p-4 text-center">
+<footer class="bg-gray-800 text-white p-4 text-center">
     <p>&copy; 2023 SCM. All rights reserved.</p>
 </footer>
-
-
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>

@@ -2,12 +2,31 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
       th:replace="~{base :: parent(~{::#content}, 'Service Page')}">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Page</title>
+    <link rel="stylesheet" href="/css/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
 </head>
-<body>
-<section id="content">
-    <h1>Welcome to Service Page</h1>
-    <p>hih io cdsh 8ih fo8dsh v 8ifjn fi o8shids hohfkds ioshfdsn hhnfn jdfbjdb</p>
-</section>
+<body class="bg-gray-100 text-gray-800">
+
+<!-- Navigation Bar -->
+<div th:insert="~{navbar :: navbar}"></div>
+
+<!-- Main Content -->
+<main class="container mx-auto p-6 mt-16">
+    <section id="content" class="bg-white p-8 rounded-lg shadow-lg mt-24 pt-20">
+        <h1 class="text-4xl font-bold mb-4 text-center">Welcome to Service Page</h1>
+        <p class="text-lg text-gray-700 leading-relaxed">hih io cdsh 8ih fo8dsh v 8ifjn fi o8shids hohfkds ioshfdsn hhnfn jdfbjdb</p>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white p-4 text-center mt-16">
+    <p>&copy; 2023 SCM. All rights reserved.</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
 </body>
 </html>

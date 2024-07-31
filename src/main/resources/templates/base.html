@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/output.css">
-<link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
-
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
     <title th:text="${title}">SCM</title>
-    <!-- Font awsesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<body class="min-h-screen flex flex-col">
 
-<body  >
+<header>
+    <div data-th-replace="~{navbar :: navbar}"></div>
+</header>
 
-<div data-th-replace="~{navbar :: navbar}"></div>
-<!--maincontent-->
-<div class="p-4 ">
+<main class="flex-grow p-4">
     <section th:replace="${content}"></section>
-</div>
+</main>
 
-<footer class="p-4">Copyright 2023</footer>
+<footer class="bg-gray-800 text-white p-4 text-center mt-auto">
+    &copy; 2023 SCM. All rights reserved.
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
 
 </body>
