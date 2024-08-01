@@ -1,6 +1,7 @@
 package com.scm.scm.services.impl;
 
 import com.scm.scm.exception.ResourceNotFoundException;
+import com.scm.scm.helper.AppConstant;
 import com.scm.scm.model.User;
 import com.scm.scm.repository.UserRepo;
 import com.scm.scm.services.UserService;
@@ -9,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,17 +22,17 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepo userRepo;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Override
     public User saveUser(User user) throws Exception {
-        try {
-            logger.info("Saving user: {}", user.getEmail());
-            return userRepo.save(user);
-        } catch (Exception e) {
-            logger.error("Error saving user: {}", e.getMessage());
-            throw new Exception("Error saving user", e);
-        }
+//        user.setUserId(user.getUserId());
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRole_list(List.of(AppConstant.ROLE_USER));
+        return userRepo.save(user);
     }
 
     @Override

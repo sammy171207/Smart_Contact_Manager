@@ -42,6 +42,11 @@ public class PageController {
         System.out.println("Service page loading");
         return "service";
     }
+    @GetMapping("/")
+    public String index(){
+        System.out.println("Back to Home");
+        return "redirect:home";
+    }
 
     @GetMapping("/register")
     public String register(Model model){
@@ -63,15 +68,15 @@ public class PageController {
 //                .about(userForm.getAbout())
 //                .profilePic("https://images.pexels.com/photos/27355293/pexels-photo-27355293/free-photo-of-portrait-of-an-african-man-wearing-cap.jpeg?auto=compress&cs=tinysrgb&w=600")
 //                .build();
-//        User user =new User();
-//        user.setName(userForm.getUsername());
-//        user.setEmail(userForm.getEmail());
-//        user.setPassword(userForm.getPassword());
-//        user.setAbout(userForm.getAbout());
-//        user.setPhoneNumber(userForm.getContactNumber());
-//        user.setProfilePic("https://images.pexels.com/photos/24742511/pexels-photo-24742511/free-photo-of-portrait-of-woman-wearing-silver-armor.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-//       User saved=  userService.saveUser(user);
-//        System.out.println(saved);
+        User user =new User();
+        user.setName(userForm.getUsername());
+        user.setEmail(userForm.getEmail());
+        user.setPassword(userForm.getPassword());
+        user.setAbout(userForm.getAbout());
+        user.setPhoneNumber(userForm.getContactNumber());
+        user.setProfilePic("https://images.pexels.com/photos/24742511/pexels-photo-24742511/free-photo-of-portrait-of-woman-wearing-silver-armor.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+       User saved=  userService.saveUser(user);
+        System.out.println(saved);
 //        Message message = Message.builder().content("Registration Successful").type(MessageType.green).build();
 //
 //        session.setAttribute("message", message);
